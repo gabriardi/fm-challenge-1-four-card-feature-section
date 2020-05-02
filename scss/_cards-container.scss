@@ -1,0 +1,69 @@
+.cards-container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: center;
+  justify-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-rows: auto;
+  }
+}
+.card {
+  padding: 2rem 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 2rem 2rem rgba(#000, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media only screen and (max-width: $bp-medium) {
+    height: 100%;
+  }
+
+  &--1 {
+    border-top: 3px solid $color-cyan;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    @media only screen and (max-width: $bp-medium) {
+      @include unset-grid-row-column;
+    }
+  }
+  &--2 {
+    border-top: 3px solid $color-red;
+    grid-column: 2/3;
+    @media only screen and (max-width: $bp-medium) {
+      @include unset-grid-row-column;
+    }
+  }
+  &--3 {
+    border-top: 3px solid $color-orange;
+    grid-column: 2/3;
+    @media only screen and (max-width: $bp-medium) {
+      @include unset-grid-row-column;
+    }
+  }
+  &--4 {
+    border-top: 3px solid $color-blue;
+    grid-column: 3/4;
+    grid-row: 1/-1;
+    @media only screen and (max-width: $bp-medium) {
+      @include unset-grid-row-column;
+    }
+  }
+  &__description {
+    margin-top: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+  &__icon {
+    margin-top: 2rem;
+    left: 100%;
+    height: 64px;
+    width: 64px;
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,53 @@
+@import './mixins';
+@import './variables';
+@import './heading';
+@import './cards-container';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 55%;
+  }
+}
+
+body {
+  background-color: $color-neutral-light;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: $color-neutral-dark;
+}
+
+p {
+  color: $color-neutral;
+}
+
+::selection {
+  background-color: $color-neutral-dark;
+  color: $color-neutral-light;
+}
+
+.container {
+  margin: 6rem auto;
+  width: 50%;
+
+  @media only screen and (max-width: $bp-large) {
+    width: 70%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    width: 85%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    width: 90%;
+  }
+}
